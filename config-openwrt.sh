@@ -34,12 +34,12 @@
 # Update the root password. Supply new password for NEWPASSWD and
 # uncomment six lines.
 # 
-# echo 'Updating root password'
-# NEWPASSWD=your-new-root-password
-# passwd <<EOF
-# $NEWPASSWD
-# $NEWPASSWD
-# EOF
+echo 'Updating root password'
+NEWPASSWD=
+passwd <<EOF
+$NEWPASSWD
+$NEWPASSWD
+EOF
 
 # === Set up the WAN (eth0) interface ==================
 # Default is DHCP, this sets it to PPPoE (typical for DSL/ADSL) 
@@ -62,14 +62,14 @@
 # Download and update all the interesting packages
 # Some of these are pre-installed, but there is no harm in
 # updating/installing them a second time.
-# echo 'Updating software packages'
-# opkg update                # retrieve updated packages
-# opkg install luci          # install the web GUI
-# opkg install snmpd fprobe  # install snmpd & fprobe
-# opkg install luci-app-sqm  # install the SQM modules to get fq_codel etc
-# opkg install ppp-mod-pppoe # install PPPoE module
-# opkg install avahi-daemon  # install the mDNS daemon
-# opkg install netperf		 # install the netperf module for speed testing
+echo 'Updating software packages'
+opkg update						# retrieve updated packages
+opkg install luci				# install the web GUI
+opkg install snmpd fprobe		# install snmpd & fprobe
+opkg install luci-app-sqm		# install the SQM modules to get fq_codel etc
+opkg install ppp-mod-pppoe		# install PPPoE module
+opkg install dnscrypt-proxy2	# install dnscrypt proxy
+opkg install netperf			# install the netperf module for speed testing
 
 # === Set the Time Zone ========================
 # Set the time zone to non-default (other than UTC)
