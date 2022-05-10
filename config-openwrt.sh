@@ -78,13 +78,13 @@ opkg install netperf			# install the netperf module for speed testing
 # Use the URL above to find the desired ZONENAME and TIMEZONE, 
 # then uncomment seven lines
 #
-# TIMEZONE='EST5EDT,M3.2.0,M11.1.0'
-# ZONENAME='America/New York'
-# echo 'Setting timezone to' $TIMEZONE
-# uci set system.@system[0].timezone="$TIMEZONE"
-# echo 'Setting zone name to' $ZONENAME 
-# uci set system.@system[0].zonename="$ZONENAME"
-# uci commit system
+ TIMEZONE='MST7MDT,M3.2.0,M11.1.0'
+ ZONENAME='America/Denver'
+ echo 'Setting timezone to' $TIMEZONE
+ uci set system.@system[0].timezone="$TIMEZONE"
+ echo 'Setting zone name to' $ZONENAME 
+ uci set system.@system[0].zonename="$ZONENAME"
+ uci commit system
 
 # === Enable SNMP daemon =======================
 # Enables responses on IPv4 & IPv6 with same read-only community string
